@@ -10,7 +10,7 @@ Utilizar este script via crontab apontando a saida padrão `stdout`e de erros `s
 É esperado o uso deste script quando o arquivo de backup e os wals forem copiados para outro repositório (bucket ou ferramenta de backup).
 Opcionalmente executar com a flag `--dry-run` para que este printe os comandos a serem executados sem que sejam efetivados.
 
-## Requisitos.
+### Requisitos.
 postgresql.conf
 > ```
 > archive_mode = on
@@ -32,7 +32,7 @@ Utilizar este script via crontab.
 É esperado o uso deste script quando a estratégia de backup utilizada seja o pg_dump e há necessidade de monitorar a execução do job.
 Opcionalmente executar com a flag `--dry-run` para que este printe os comandos a serem executados sem que sejam efetivados.
 
-## Requisitos
+### Requisitos
 Criação de um usuário específico para o backup no PostgreSQL.
 |User|`pgbackup`|
 |---:|:---|
