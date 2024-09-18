@@ -1,6 +1,6 @@
 # PostgreSQL Backup Scripts
 ***
-|SCRIPT|[basebackup.sh](./basebackup.sh)|
+|SCRIPT|[pg-base-backup.sh](./pg-base-backup.sh)|
 |----------:|:---|
 |RESUMO|Script para executar pg_basebackup em diretório local.| 
 |USO|`/path/to/basebackup.sh [--dry-run] > /path/to/log 2>&1`|
@@ -21,7 +21,7 @@ postgresql.conf
 > ```
 ***
 
-|SCRIPT|[pgdump_dbs.sh](./pgdump_dbs.sh)|
+|SCRIPT|[pg-dump-dbs.sh](./pg-dump-dbs.sh)|
 |----------:|:---|
 |RESUMO|Script para executar pg_dump em formato diretório através de servidor remoto, sendo que cada database será exportada de forma individual.| 
 |USO|`/path/to/pgdump.sh [--dry-run] [--help]`|
