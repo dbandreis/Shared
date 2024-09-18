@@ -4,7 +4,7 @@ usage() {
     echo "Usage: $0 [--dry-run] [--help]"
     echo
     echo "Options:"
-    echo "  --dry-run   Simulate the actions without executing them."
+    echo "  --dry-run   Output the commands without executing them."
     echo "  --help      Display this help message."
     exit 1
 }
