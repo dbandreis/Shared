@@ -1,1 +1,4 @@
-# PostgreSQL local base backup to be copied to Bucket or any backup Tool
+# PostgreSQL Backup Scripts
+| Script | BR | En |
+| :---   | :---   | :---   |
+| basebackup.sh | Script para executar backup em disco local para cópia posterior para outro repositório | | 
