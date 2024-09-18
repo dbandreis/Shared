@@ -1,4 +1,7 @@
 # PostgreSQL Backup Scripts
-|Script|PG VERSION|BR|EN|USAGE|
-|:---|:---|:---|:---|:---|
-|[basebackup.sh](./basebackup.sh)|Any|Script para executar backup em diretório local.| |`/path/to/basebackup.sh [--dry-run] > /path/to/log`|
+|Script|[basebackup.sh](./basebackup.sh)|
+|PG Versions|Any|
+|BR|Script para executar backup em diretório local.| 
+|EN||
+|USAGE|`/path/to/basebackup.sh [--dry-run] > /path/to/log`|
+
