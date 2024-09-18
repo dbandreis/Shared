@@ -19,7 +19,6 @@ postgresql.conf
 > wal_level = replica     # PG 9.5+
 > wal_level = hot_standby # PG 9.3-
 > ```
-
 ***
 
 |SCRIPT|[pgdump_dbs.sh](./pgdump_dbs.sh)|
@@ -63,3 +62,25 @@ Criação de uma tabela para armazenar as informações do backup.
 > GRANT ALL ON TABLE backup_status TO pgbackup;
 > GRANT ALL ON SEQUENCE backup_status_backup_id_seq TO pgbackup;
 > ```
+***
+|SCRIPT|[pg-start-backup.sh](./pg-start-backup.sh)|
+|----------:|:---|
+|RESUMO|Script para manter o banco em modo backup a fim de copiar os arquivos do datadir de forma manual (rsync ou ferramenta de backup).| 
+|USO|`/path/to/pgstartbackup.sh`|
+|ARGS||
+
+Utilizar este script via crontab quando não há um filesystem disponível para backup.
+É esperado o uso deste script quando a execução do backup é realizado por alguma ferramenta externa ou via rsync.
+O script irá manter o banco em modo backup por X horas sendo o valor em horas utilizado na query `select now(),pg_sleep(X*60*60);`.
+Após o periodo de backup os wals anteriores ao inicio do backup atual serão removidos do servidor.
+
+### Requisitos.
+Para o uso deste script é necessário que o cluster esteja em modo archive e que os archives gerados sejam copiados para o repositório cujos arquivos do pgdata estão alocados.
+postgresql.conf
+> ```
+> archive_mode = on
+> archive_command = 'cp %p /dados/pgwal'
+> wal_level = replica     # PG 9.5+
+> wal_level = hot_standby # PG 9.3-
+> ```
+***
